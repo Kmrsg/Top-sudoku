@@ -42,4 +42,3 @@ function prettyBoard() {
    * Подумай, как симпатичнее его вывести.
    */
 }
-prettyBoard()
