@@ -1,5 +1,11 @@
 function read() {
-  /**
+  // const fs = require('fs')
+  // const path = require ('path')
+  // const dirName = require(__dirname)
+  // const dirPath = path.join(dirName, './puzzles.txt')
+  // const txt = fs.readFileSync(`${dirName}/puzzles.txt`, 'utf-8');
+
+
    * Прочесть файл puzzles.txt в кодировке 'utf-8' и вернуть эти данные из функции
    */
 }
