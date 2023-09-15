@@ -30,6 +30,10 @@ function isSolved() {
 }
 
 function prettyBoard() {
+  for (let i=0;i<puzzles.length;i++)
+const row = 
+
+
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции solve.
    * Выводит в консоль/терминал судоку.
