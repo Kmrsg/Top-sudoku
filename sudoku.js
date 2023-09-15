@@ -43,6 +43,7 @@ function solve() {
       }
     }
   }
+  console.log('К сожалению не смог решить правильно');
   return puzzle;
 }
 console.table(solve());
@@ -59,7 +60,7 @@ function isSolved(arr) {
     return arr;
   }
 }
-
+module.exports = { read, solve, isSolved };
 function prettyBoard() {
   // for (let i = 0; i < puzzles.length; i++) {}
   /**
