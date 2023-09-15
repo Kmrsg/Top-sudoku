@@ -30,8 +30,10 @@ function isSolved() {
 }
 
 function prettyBoard() {
-  for (let i=0;i<puzzles.length;i++)
-const row = 
+  for (let i=0;i<puzzles.length;i++){
+    const row = puzzles[i].join(" ")
+    console.log(row)
+  }
 
 
   /**
@@ -40,3 +42,4 @@ const row =
    * Подумай, как симпатичнее его вывести.
    */
 }
+prettyBoard()
