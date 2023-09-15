@@ -11,7 +11,7 @@ function read() {
     .trim()
     .split(EOL)
     .map((el) => Array.from(el))[some[2]];
-  let subArray = [];
+  const subArray = [];
   for (let i = 0; i < txt.length / 9; i += 1) {
     subArray[i] = txt.slice(i * 9, i * 9 + 9);
   }
@@ -21,25 +21,47 @@ function read() {
   //  */
 }
 
-const puzzles = read();
-console.log(puzzles);
 function solve() {
-  /**
-   * Принимает игровое поле в том формате, в котором его вернули из функции read.
-   * Возвращает игровое поле после попытки его решить.
-   */
-}
+  const puzzle = read();
 
-function isSolved() {
-  /**
-   * Принимает игровое поле в том формате, в котором его вернули из функции solve.
-   * Возвращает булевое значение — решено это игровое поле или нет.
-   */
+  for (let r = 0; r < 9; r += 1) {
+    for (let c = 0; c < 9; c += 1) {
+      if (puzzle[r][c] === '-') {
+        for (let i = 1; i < 10; i += 1) {
+          let valid = true;
+          let random = Math.floor(Math.random() * 9) + 1;
+          for (let j = 0; j < 9; j += 1) {
+            if (puzzle[j][c] == random || puzzle[r][j] == random) {
+              valid = false;
+            }
+          }
+
+          if (valid) {
+            puzzle[r][c] = random.toString();
+          }
+        }
+      }
+    }
+  }
+  return puzzle;
+}
+console.table(solve());
+
+function isSolved(arr) {
+  let some = false;
+  arr.forEach((el) => {
+    if (el.includes('-')) some = true;
+  });
+
+  if (some) {
+    solve();
+  } else {
+    return arr;
+  }
 }
 
 function prettyBoard() {
-  for (let i = 0; i < puzzles.length; i++) {}
-
+  // for (let i = 0; i < puzzles.length; i++) {}
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции solve.
    * Выводит в консоль/терминал судоку.
